@@ -25,7 +25,7 @@ return [
              *
              * It should implement \Spatie\WebhookClient\SignatureValidator\SignatureValidator
              */
-            'signature_validator' => \Spatie\WebhookClient\SignatureValidator\DefaultSignatureValidator::class,
+            'signature_validator' => \App\Helper\TwakToSignatureValidator::class,
 
             /*
              * This class determines if the webhook call should be stored and processed.
@@ -43,7 +43,7 @@ return [
              *
              * This should be set to a class that extends \Spatie\WebhookClient\ProcessWebhookJob.
              */
-            'process_webhook_job' => '',
+            'process_webhook_job' => \App\Services\TwakToWebhookProessor::class,
         ],
     ],
 ];
